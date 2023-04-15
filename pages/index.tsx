@@ -4,6 +4,8 @@ import { Box, Card, CardBody, Container, Flex, Heading, Input, SimpleGrid, Skele
 import { ethers } from "ethers";
 import { useState } from "react";
 import { FaDonate } from "react-icons/fa";
+import { useColorMode, IconButton } from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -30,15 +32,36 @@ const Home: NextPage = () => {
     setMessage("");
     setName("");
   }
-
+  
+  function DarkModeToggle() {
+    const { colorMode, toggleColorMode } = useColorMode();
+    const isDark = colorMode === "dark";
+  
+    return (
+      <IconButton
+        size="md"
+        fontSize="lg"
+        aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+        variant="ghost"
+        color="current"
+        marginLeft="2"
+        onClick={toggleColorMode}
+        icon={isDark ? <SunIcon /> : <MoonIcon />}
+      />
+    );
+  }
   return (
     <Container maxW={"1200px"} w={"full"}>
-      <Flex justifyContent={"space-between"} alignItems={"center"} py={"20px"} height={"80px"}>
-        <Box>
-          <Image src="/logo.png" alt="Logo" w="100px" />
+      <Flex justifyContent={"space-between"} alignItems={"center"} px={6} py={4} borderBottomWidth={1} borderBottomColor="gray.200">
+      <Flex alignItems={"center"}>
+          <Image src="/logo.png" alt="Logo" w="50px" mr={2}  />
           <Heading as="h1" fontSize="2xl" fontWeight="bold">Donate to the Charity</Heading>
-        </Box>
-        <ConnectWallet />
+          </Flex>
+          <Flex alignItems={"center"}>
+        <DarkModeToggle />
+        <ConnectWallet /> 
+        </Flex>
+
       </Flex>
       <SimpleGrid columns={2} spacing={10} mt={"40px"}>
         <Box>
@@ -52,14 +75,14 @@ const Home: NextPage = () => {
               </Flex>
               <Text fontSize={"2xl"} py={"10px"}>Name:</Text>
               <Input
-                placeholder="John Doe"
+                placeholder="Logan Roy"
                 maxLength={16}
                 value={name}
                 onChange={handleNameChange}
               />
               <Text fontSize={"2xl"} mt={"10px"} py={"10px"}>Message: </Text>
               <Input
-                placeholder="Hello"
+                placeholder="This is my donation"
                 maxLength={80}
                 value={message}
                 onChange={handleMessageChange}
