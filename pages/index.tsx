@@ -1,4 +1,4 @@
-import {useAddress, useContract, useContractRead, Web3Button } from "@thirdweb-dev/react";
+import {useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { Box, Card, CardBody, Container, Flex, Heading, Input, SimpleGrid, Skeleton, Stack, Text, Image, Button } from "@chakra-ui/react"
 import { ethers } from "ethers";
@@ -11,6 +11,8 @@ import Web3 from 'web3';
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 import { ExternalProvider } from '@ethersproject/providers';
 import { useRouter } from "next/router";
+import { extractFunctions } from "@thirdweb-dev/sdk";
+import { useContractFunction } from "@thirdweb-dev/react";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -234,3 +236,4 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+ 
