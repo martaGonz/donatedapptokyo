@@ -1,0 +1,66 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/projects";
+exports.ids = ["pages/projects"];
+exports.modules = {
+
+/***/ "./pages/projects.tsx":
+/*!****************************!*\
+  !*** ./pages/projects.tsx ***!
+  \****************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/react */ \"@chakra-ui/react\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__]);\n_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\n\nconst projects = [\n    {\n        id: 1,\n        name: \"Project 1\",\n        description: \"This is project 1\"\n    },\n    {\n        id: 2,\n        name: \"Project 2\",\n        description: \"This is project 2\"\n    },\n    {\n        id: 3,\n        name: \"Project 3\",\n        description: \"This is project 3\"\n    },\n    {\n        id: 4,\n        name: \"Project 4\",\n        description: \"This is project 4\"\n    },\n    {\n        id: 5,\n        name: \"Project 5\",\n        description: \"This is project 5\"\n    }\n];\nconst Projects = ()=>{\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();\n    const handleDonateClick = (id)=>{\n        router.push(`/donate/${id}`);\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Container, {\n        maxW: \"1200px\",\n        w: \"full\",\n        mt: 8,\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Heading, {\n                as: \"h1\",\n                fontSize: \"3xl\",\n                mb: 6,\n                children: \"Select a project to donate to:\"\n            }, void 0, false, {\n                fileName: \"/Users/m/Desktop/donatedapp/pages/projects.tsx\",\n                lineNumber: 48,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.SimpleGrid, {\n                columns: [\n                    1,\n                    2,\n                    3\n                ],\n                spacing: 10,\n                children: projects.map((project)=>/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Box, {\n                        borderWidth: \"1px\",\n                        borderRadius: \"lg\",\n                        p: 6,\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Heading, {\n                                as: \"h2\",\n                                fontSize: \"xl\",\n                                mb: 4,\n                                children: project.name\n                            }, void 0, false, {\n                                fileName: \"/Users/m/Desktop/donatedapp/pages/projects.tsx\",\n                                lineNumber: 54,\n                                columnNumber: 13\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Text, {\n                                children: project.description\n                            }, void 0, false, {\n                                fileName: \"/Users/m/Desktop/donatedapp/pages/projects.tsx\",\n                                lineNumber: 57,\n                                columnNumber: 13\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Box, {\n                                mt: 6,\n                                bg: \"teal.400\",\n                                color: \"white\",\n                                rounded: \"md\",\n                                px: 4,\n                                py: 2,\n                                _hover: {\n                                    bg: \"teal.500\",\n                                    cursor: \"pointer\"\n                                },\n                                onClick: ()=>handleDonateClick(project.id),\n                                children: [\n                                    \"Donate to \",\n                                    project.name\n                                ]\n                            }, void 0, true, {\n                                fileName: \"/Users/m/Desktop/donatedapp/pages/projects.tsx\",\n                                lineNumber: 58,\n                                columnNumber: 13\n                            }, undefined)\n                        ]\n                    }, project.id, true, {\n                        fileName: \"/Users/m/Desktop/donatedapp/pages/projects.tsx\",\n                        lineNumber: 53,\n                        columnNumber: 11\n                    }, undefined))\n            }, void 0, false, {\n                fileName: \"/Users/m/Desktop/donatedapp/pages/projects.tsx\",\n                lineNumber: 51,\n                columnNumber: 7\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"/Users/m/Desktop/donatedapp/pages/projects.tsx\",\n        lineNumber: 47,\n        columnNumber: 5\n    }, undefined);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projects);\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9wcm9qZWN0cy50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7OztBQUM2RTtBQUNyQztBQVF4QyxNQUFNTSxXQUFzQjtJQUMxQjtRQUNFQyxJQUFJO1FBQ0pDLE1BQU07UUFDTkMsYUFBYTtJQUNmO0lBQ0E7UUFDRUYsSUFBSTtRQUNKQyxNQUFNO1FBQ05DLGFBQWE7SUFDZjtJQUNBO1FBQ0VGLElBQUk7UUFDSkMsTUFBTTtRQUNOQyxhQUFhO0lBQ2Y7SUFDQTtRQUNFRixJQUFJO1FBQ0pDLE1BQU07UUFDTkMsYUFBYTtJQUNmO0lBQ0E7UUFDRUYsSUFBSTtRQUNKQyxNQUFNO1FBQ05DLGFBQWE7SUFDZjtDQUNEO0FBRUQsTUFBTUMsV0FBcUIsSUFBTTtJQUMvQixNQUFNQyxTQUFTTixzREFBU0E7SUFFeEIsTUFBTU8sb0JBQW9CLENBQUNMLEtBQWU7UUFDeENJLE9BQU9FLElBQUksQ0FBQyxDQUFDLFFBQVEsRUFBRU4sR0FBRyxDQUFDO0lBQzdCO0lBRUEscUJBQ0UsOERBQUNOLHVEQUFTQTtRQUFDYSxNQUFNO1FBQVVDLEdBQUc7UUFBUUMsSUFBSTs7MEJBQ3hDLDhEQUFDZCxxREFBT0E7Z0JBQUNlLElBQUc7Z0JBQUtDLFVBQVM7Z0JBQU1DLElBQUk7MEJBQUc7Ozs7OzswQkFHdkMsOERBQUNoQix3REFBVUE7Z0JBQUNpQixTQUFTO29CQUFDO29CQUFHO29CQUFHO2lCQUFFO2dCQUFFQyxTQUFTOzBCQUN0Q2YsU0FBU2dCLEdBQUcsQ0FBQyxDQUFDQyx3QkFDYiw4REFBQ3ZCLGlEQUFHQTt3QkFBa0J3QixhQUFZO3dCQUFNQyxjQUFhO3dCQUFLQyxHQUFHOzswQ0FDM0QsOERBQUN4QixxREFBT0E7Z0NBQUNlLElBQUc7Z0NBQUtDLFVBQVM7Z0NBQUtDLElBQUk7MENBQ2hDSSxRQUFRZixJQUFJOzs7Ozs7MENBRWYsOERBQUNKLGtEQUFJQTswQ0FBRW1CLFFBQVFkLFdBQVc7Ozs7OzswQ0FDMUIsOERBQUNULGlEQUFHQTtnQ0FDRmdCLElBQUk7Z0NBQ0pXLElBQUc7Z0NBQ0hDLE9BQU07Z0NBQ05DLFNBQVE7Z0NBQ1JDLElBQUk7Z0NBQ0pDLElBQUk7Z0NBQ0pDLFFBQVE7b0NBQUVMLElBQUk7b0NBQVlNLFFBQVE7Z0NBQVU7Z0NBQzVDQyxTQUFTLElBQU10QixrQkFBa0JXLFFBQVFoQixFQUFFOztvQ0FDNUM7b0NBQ1lnQixRQUFRZixJQUFJOzs7Ozs7Ozt1QkFmakJlLFFBQVFoQixFQUFFOzs7Ozs7Ozs7Ozs7Ozs7O0FBc0I5QjtBQUVBLGlFQUFlRyxRQUFRQSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZG9uYXRlZGFwcC8uL3BhZ2VzL3Byb2plY3RzLnRzeD82MzUzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5leHRQYWdlIH0gZnJvbSBcIm5leHRcIjsgXG5pbXBvcnQgeyBCb3gsIENvbnRhaW5lciwgSGVhZGluZywgU2ltcGxlR3JpZCwgVGV4dCB9IGZyb20gXCJAY2hha3JhLXVpL3JlYWN0XCI7XG5pbXBvcnQgeyB1c2VSb3V0ZXIgfSBmcm9tIFwibmV4dC9yb3V0ZXJcIjtcblxuaW50ZXJmYWNlIFByb2plY3Qge1xuICBpZDogbnVtYmVyO1xuICBuYW1lOiBzdHJpbmc7XG4gIGRlc2NyaXB0aW9uOiBzdHJpbmc7XG59XG5cbmNvbnN0IHByb2plY3RzOiBQcm9qZWN0W10gPSBbXG4gIHtcbiAgICBpZDogMSxcbiAgICBuYW1lOiBcIlByb2plY3QgMVwiLFxuICAgIGRlc2NyaXB0aW9uOiBcIlRoaXMgaXMgcHJvamVjdCAxXCIsXG4gIH0sXG4gIHtcbiAgICBpZDogMixcbiAgICBuYW1lOiBcIlByb2plY3QgMlwiLFxuICAgIGRlc2NyaXB0aW9uOiBcIlRoaXMgaXMgcHJvamVjdCAyXCIsXG4gIH0sXG4gIHtcbiAgICBpZDogMyxcbiAgICBuYW1lOiBcIlByb2plY3QgM1wiLFxuICAgIGRlc2NyaXB0aW9uOiBcIlRoaXMgaXMgcHJvamVjdCAzXCIsXG4gIH0sXG4gIHtcbiAgICBpZDogNCxcbiAgICBuYW1lOiBcIlByb2plY3QgNFwiLFxuICAgIGRlc2NyaXB0aW9uOiBcIlRoaXMgaXMgcHJvamVjdCA0XCIsXG4gIH0sXG4gIHtcbiAgICBpZDogNSxcbiAgICBuYW1lOiBcIlByb2plY3QgNVwiLFxuICAgIGRlc2NyaXB0aW9uOiBcIlRoaXMgaXMgcHJvamVjdCA1XCIsXG4gIH0sXG5dO1xuXG5jb25zdCBQcm9qZWN0czogTmV4dFBhZ2UgPSAoKSA9PiB7XG4gIGNvbnN0IHJvdXRlciA9IHVzZVJvdXRlcigpO1xuXG4gIGNvbnN0IGhhbmRsZURvbmF0ZUNsaWNrID0gKGlkOiBudW1iZXIpID0+IHtcbiAgICByb3V0ZXIucHVzaChgL2RvbmF0ZS8ke2lkfWApO1xuICB9O1xuXG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lciBtYXhXPXtcIjEyMDBweFwifSB3PXtcImZ1bGxcIn0gbXQ9ezh9PlxuICAgICAgPEhlYWRpbmcgYXM9XCJoMVwiIGZvbnRTaXplPVwiM3hsXCIgbWI9ezZ9PlxuICAgICAgICBTZWxlY3QgYSBwcm9qZWN0IHRvIGRvbmF0ZSB0bzpcbiAgICAgIDwvSGVhZGluZz5cbiAgICAgIDxTaW1wbGVHcmlkIGNvbHVtbnM9e1sxLCAyLCAzXX0gc3BhY2luZz17MTB9PlxuICAgICAgICB7cHJvamVjdHMubWFwKChwcm9qZWN0KSA9PiAoXG4gICAgICAgICAgPEJveCBrZXk9e3Byb2plY3QuaWR9IGJvcmRlcldpZHRoPVwiMXB4XCIgYm9yZGVyUmFkaXVzPVwibGdcIiBwPXs2fT5cbiAgICAgICAgICAgIDxIZWFkaW5nIGFzPVwiaDJcIiBmb250U2l6ZT1cInhsXCIgbWI9ezR9PlxuICAgICAgICAgICAgICB7cHJvamVjdC5uYW1lfVxuICAgICAgICAgICAgPC9IZWFkaW5nPlxuICAgICAgICAgICAgPFRleHQ+e3Byb2plY3QuZGVzY3JpcHRpb259PC9UZXh0PlxuICAgICAgICAgICAgPEJveFxuICAgICAgICAgICAgICBtdD17Nn1cbiAgICAgICAgICAgICAgYmc9XCJ0ZWFsLjQwMFwiXG4gICAgICAgICAgICAgIGNvbG9yPVwid2hpdGVcIlxuICAgICAgICAgICAgICByb3VuZGVkPVwibWRcIlxuICAgICAgICAgICAgICBweD17NH1cbiAgICAgICAgICAgICAgcHk9ezJ9XG4gICAgICAgICAgICAgIF9ob3Zlcj17eyBiZzogXCJ0ZWFsLjUwMFwiLCBjdXJzb3I6IFwicG9pbnRlclwiIH19XG4gICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IGhhbmRsZURvbmF0ZUNsaWNrKHByb2plY3QuaWQpfVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICBEb25hdGUgdG8ge3Byb2plY3QubmFtZX1cbiAgICAgICAgICAgIDwvQm94PlxuICAgICAgICAgIDwvQm94PlxuICAgICAgICApKX1cbiAgICAgIDwvU2ltcGxlR3JpZD5cbiAgICA8L0NvbnRhaW5lcj5cbiAgKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IFByb2plY3RzO1xuIl0sIm5hbWVzIjpbIkJveCIsIkNvbnRhaW5lciIsIkhlYWRpbmciLCJTaW1wbGVHcmlkIiwiVGV4dCIsInVzZVJvdXRlciIsInByb2plY3RzIiwiaWQiLCJuYW1lIiwiZGVzY3JpcHRpb24iLCJQcm9qZWN0cyIsInJvdXRlciIsImhhbmRsZURvbmF0ZUNsaWNrIiwicHVzaCIsIm1heFciLCJ3IiwibXQiLCJhcyIsImZvbnRTaXplIiwibWIiLCJjb2x1bW5zIiwic3BhY2luZyIsIm1hcCIsInByb2plY3QiLCJib3JkZXJXaWR0aCIsImJvcmRlclJhZGl1cyIsInAiLCJiZyIsImNvbG9yIiwicm91bmRlZCIsInB4IiwicHkiLCJfaG92ZXIiLCJjdXJzb3IiLCJvbkNsaWNrIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/projects.tsx\n");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "react/jsx-dev-runtime":
+/*!****************************************!*\
+  !*** external "react/jsx-dev-runtime" ***!
+  \****************************************/
+/***/ ((module) => {
+
+module.exports = require("react/jsx-dev-runtime");
+
+/***/ }),
+
+/***/ "@chakra-ui/react":
+/*!***********************************!*\
+  !*** external "@chakra-ui/react" ***!
+  \***********************************/
+/***/ ((module) => {
+
+module.exports = import("@chakra-ui/react");;
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = (__webpack_exec__("./pages/projects.tsx"));
+module.exports = __webpack_exports__;
+
+})();
