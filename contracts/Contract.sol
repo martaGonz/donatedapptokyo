@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
+import "@celo/contractkit/contracts/registry/Attestations.sol";
 
-contract DonateETH {
+contract DonateCELO {
      uint256 totalDonations;
      address payable public owner;
 
