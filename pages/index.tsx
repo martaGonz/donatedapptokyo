@@ -1,4 +1,4 @@
-import { useAddress, useContract, useContractRead, Web3Button } from "@thirdweb-dev/react";
+import {useAddress, useContract, useContractRead, Web3Button } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { Box, Card, CardBody, Container, Flex, Heading, Input, SimpleGrid, Skeleton, Stack, Text, Image, Button } from "@chakra-ui/react"
 import { ethers } from "ethers";
@@ -37,9 +37,10 @@ const Home: NextPage = () => {
       console.error('MetaMask provider not found');
     }
   };
+
   useEffect(() => {
     detectProvider();
-  }, []);
+  }, [isConnected]);
 
 
   const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +50,6 @@ const Home: NextPage = () => {
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
-
 
   function clearValues() {
     setMessage("");
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
 
   const connectMetaMask = async () => {
     console.log('Attempting to connect MetaMask...');
-
+  
     if (!provider || typeof provider.request !== 'function') {
       console.log('Provider not available or request method undefined');
       return;
@@ -79,12 +79,14 @@ const Home: NextPage = () => {
       try {
         const accounts = await provider.request({ method: 'eth_requestAccounts' });
         setAccount(accounts[0]);
-        setIsConnected(true); // Set isConnected to true when connected
+        setIsConnected(true);
+        console.log('Accounts:', accounts); // Log accounts instead of isConnected
       } catch (error) {
         console.error('Error connecting to MetaMask:', error);
       }
     }
   };
+  
 
   const disconnectMetaMask = () => {
     setAccount('');
@@ -164,27 +166,32 @@ const Home: NextPage = () => {
                 value={message}
                 onChange={handleMessageChange}
               />
+              
               <Flex justifyContent={"center"} mt={"20px"}>
-                {isConnected && (
-                  <Web3Button
-                    contractAddress={contractAddress}
-                    action={(contract) => {
-                      contract.call("sendDonation", [message, name], { value: ethers.utils.parseEther("0.01") })
-                    }}
-                    onSuccess={() => clearValues()}
-                  >
-                    <Flex alignItems="center">
-                      <FaDonate size={16} />
-                      <Text ml={2}>Donate 0.01 ETH</Text>
-                    </Flex>
-                  </Web3Button>
-                )}
-                {!isConnected && (
-                  <Text>Please connect your wallet</Text>
-                )}
+  {isConnected ? (
+    <Button
+      colorScheme="blue"
+      onClick={async () => {
+        const { send } = useContractFunction(contract, "sendDonation");
+        try {
+          await send([message, name], { value: ethers.utils.parseEther("0.01") });
+          clearValues();
+        } catch (error) {
+          console.error("Error sending donation:", error);
+        }
+      }}
+    >
+      <Flex alignItems="center">
+        <FaDonate size={16} />
+        <Text ml={2}>Donate 0.01 ETH</Text>
+      </Flex>
+    </Button>
+  ) : (
+    <Text>Please connect your wallet</Text>
+  )}
+</Flex>
 
- 
-              </Flex>
+
 
             </CardBody>
           </Card>
