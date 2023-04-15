@@ -1,8 +1,9 @@
 import { ConnectWallet, useAddress, useContract, useContractRead, Web3Button } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
-import { Box, Card, CardBody, Container, Flex, Heading, Input, SimpleGrid, Skeleton, Stack, Text } from "@chakra-ui/react"
+import { Box, Card, CardBody, Container, Flex, Heading, Input, SimpleGrid, Skeleton, Stack, Text, Image } from "@chakra-ui/react"
 import { ethers } from "ethers";
 import { useState } from "react";
+import { FaDonate } from "react-icons/fa";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -34,7 +35,8 @@ const Home: NextPage = () => {
     <Container maxW={"1200px"} w={"full"}>
       <Flex justifyContent={"space-between"} alignItems={"center"} py={"20px"} height={"80px"}>
         <Box>
-          <Text fontWeight={"bold"}>Donate Me 0.01 ETH</Text>
+          <Image src="/logo.png" alt="Logo" w="100px" />
+          <Heading as="h1" fontSize="2xl" fontWeight="bold">Donate to the Charity</Heading>
         </Box>
         <ConnectWallet />
       </Flex>
@@ -42,11 +44,10 @@ const Home: NextPage = () => {
         <Box>
           <Card>
             <CardBody>
-              <Heading mb={"20px"}>Donate to Maruta</Heading>
-              <Flex direction={"row"}>
-                <Text>Total Donations: </Text>
+              <Flex justifyContent={"space-between"} alignItems={"center"} mb={"20px"}>
+                <Text>Total Donations:</Text>
                 <Skeleton isLoaded={!loadingTotalDonation} width={"20px"} ml={"5px"}>
-                  {totalDonations?.toString()}
+                  <Text fontSize={"xl"}>{totalDonations?.toString()}</Text>
                 </Skeleton>
               </Flex>
               <Text fontSize={"2xl"} py={"10px"}>Name:</Text>
@@ -56,14 +57,14 @@ const Home: NextPage = () => {
                 value={name}
                 onChange={handleNameChange}
               />
-              <Text fontSize={"2x1"} mt={"10px"} py={"10px"}>Message: </Text>
+              <Text fontSize={"2xl"} mt={"10px"} py={"10px"}>Message: </Text>
               <Input
                 placeholder="Hello"
                 maxLength={80}
                 value={message}
                 onChange={handleMessageChange}
               />
-              <Box mt={"20px"}>
+              <Flex justifyContent={"center"} mt={"20px"}>
                 {address ? (
                   <Web3Button
                     contractAddress={contractAddress}
@@ -71,14 +72,20 @@ const Home: NextPage = () => {
                       contract.call("sendDonation", [message, name], { value: ethers.utils.parseEther("0.01") })
                     }}
                     onSuccess={() => clearValues()}
-                  >{"Donate 0.01"}</Web3Button>
+                  >
+                    <Flex alignItems="center">
+                      <FaDonate size={16} />
+                      <Text ml={2}>Donate 0.01 ETH</Text>
+                    </Flex>
+                  </Web3Button>
                 ) : (
                   <Text>Please connect your wallet</Text>
                 )}
-              </Box>
+              </Flex>
             </CardBody>
           </Card>
-        </Box>
+
+          </Box>
         <Box>
           <Card maxH={"60vh"} overflow={"scroll"}>
             <CardBody>
@@ -89,8 +96,12 @@ const Home: NextPage = () => {
                     return (
                       <Card key={index} my={"10px"}>
                         <CardBody>
-                          <Text fontSize={"2x1"}>{donation[1]}</Text>
-                          <Text>From: {donation[2]}</Text>
+                          <Flex justifyContent={"space-between"}>
+                          <Text fontSize={"lg"} mt={"5px"}>{donation[1]}</Text>
+                            <Text fontSize={"sm"}>{new Date(donation[3] * 1000).toLocaleString()}</Text>
+                          </Flex>
+                       
+                          <Text mt={"5px"}>From: {donation[2]}</Text>
                         </CardBody>
                       </Card>
                     )
@@ -112,7 +123,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-function setName(arg0: string) {
-  throw new Error("Function not implemented.");
-}
-
