@@ -11,6 +11,7 @@ import Web3 from 'web3';
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 import { ExternalProvider } from '@ethersproject/providers';
 import { useRouter } from "next/router";
+import { useContractFunction } from "@thirdweb-dev/react";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -183,7 +184,7 @@ const Home: NextPage = () => {
     >
       <Flex alignItems="center">
         <FaDonate size={16} />
-        <Text ml={2}>Donate 0.01 ETH</Text>
+        <Text ml={2}>Help with 0.01 ETH</Text>
       </Flex>
     </Button>
   ) : (
@@ -234,7 +235,4 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-function useContractFunction(contract: import("@thirdweb-dev/react").SmartContract<ethers.BaseContract> | undefined, arg1: string): { send: any; } {
-  throw new Error("Function not implemented.");
-}
-
+ 

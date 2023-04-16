@@ -37,6 +37,7 @@
   "devDependencies": {
     "@types/node": "^18.11.11",
     "@types/react": "^18",
+    "@types/web3": "^1.2.2",
     "eslint": "^8.29.0",
     "eslint-config-next": "^13",
     "typescript": "^4.9.4"
