@@ -1,4 +1,4 @@
-import {useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
+import {useAddress, useContract, useContractRead, Web3Button } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { Box, Card, CardBody, Container, Flex, Heading, Input, SimpleGrid, Skeleton, Stack, Text, Image, Button } from "@chakra-ui/react"
 import { ethers } from "ethers";
@@ -11,8 +11,6 @@ import Web3 from 'web3';
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 import { ExternalProvider } from '@ethersproject/providers';
 import { useRouter } from "next/router";
-import { extractFunctions } from "@thirdweb-dev/sdk";
-import { useContractFunction } from "@thirdweb-dev/react";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -121,7 +119,7 @@ const Home: NextPage = () => {
       <Flex justifyContent={"space-between"} alignItems={"center"} px={6} py={4} borderBottomWidth={1} borderBottomColor="gray.200">
         <Flex alignItems={"center"}>
           <Image src="/logo.png" alt="Logo" w="50px" mr={2} />
-          <Heading as="h1" fontSize="2xl" fontWeight="bold">Donate to the Charity</Heading>
+          <Heading as="h1" fontSize="2xl" fontWeight="bold">Support Content Creator</Heading>
         </Flex>
         <Flex alignItems={"center"}>
           <Flex alignItems={"center"}>
@@ -236,4 +234,7 @@ const Home: NextPage = () => {
 };
 
 export default Home;
- 
+function useContractFunction(contract: import("@thirdweb-dev/react").SmartContract<ethers.BaseContract> | undefined, arg1: string): { send: any; } {
+  throw new Error("Function not implemented.");
+}
+
