@@ -11,7 +11,6 @@ import Web3 from 'web3';
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 import { ExternalProvider } from '@ethersproject/providers';
 import { useRouter } from "next/router";
-import { useContractFunction } from "@thirdweb-dev/react";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -169,29 +168,25 @@ const Home: NextPage = () => {
               />
               
               <Flex justifyContent={"center"} mt={"20px"}>
-  {isConnected ? (
-    <Button
-      colorScheme="blue"
-      onClick={async () => {
-        const { send } = useContractFunction(contract, "sendDonation");
-        try {
-          await send([message, name], { value: ethers.utils.parseEther("0.01") });
-          clearValues();
-        } catch (error) {
-          console.error("Error sending donation:", error);
-        }
-      }}
-    >
-      <Flex alignItems="center">
-        <FaDonate size={16} />
-        <Text ml={2}>Help with 0.01 ETH</Text>
-      </Flex>
-    </Button>
-  ) : (
-    <Text>Please connect your wallet</Text>
-  )}
-</Flex>
+                {isConnected ? (
+                  <Button
+                    contractAddress={contractAddress}
+                    action={(contract) => {
+                      contract.call("sendDonation", [message, name], { value: ethers.utils.parseEther("0.01") })
+                    }}
+                    onSuccess={() => clearValues()}
+                  >
+                    <Flex alignItems="center">
+                     
+                      <Text ml={2}>Donate 0.01 ETH</Text>
+                    </Flex>
+                  </Button>
+                ) : (
+                <Text>Please connect your wallet</Text>
+                )}
 
+ 
+              </Flex>
 
 
             </CardBody>
